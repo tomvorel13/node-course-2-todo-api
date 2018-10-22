@@ -31,12 +31,12 @@ let id = '5bcae217913e1a440ec534ed';
 //   })
 //   .catch(e => console.log(e));
 
-User.findById(id)
-  .then(user => {
-    if (!user) {
-      return console.log('User not found ya fuck!');
-    }
+// User.findById(id)
+//   .then(user => {
+//     if (!user) {
+//       return console.log('User not found ya fuck!');
+//     }
 
-    console.log('User', user);
-  })
-  .catch(e => console.log('USER NOT FOUND', e));
+//     console.log('User', user);
+//   })
+//   .catch(e => console.log('USER NOT FOUND', e));
