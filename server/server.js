@@ -124,6 +124,22 @@ app.post('/users', (req, res) => {
     .catch(e => console.log(e));
 });
 
+app.get('/users/me', (req, res) => {
+  let token = req.header('x-auth');
+
+  User.findByToken(token)
+    .then(user => {
+      if (!user) {
+        return Promise.reject();
+      }
+
+      res.send(user);
+    })
+    .catch(e => {
+      res.status(401).send();
+    });
+});
+
 app.listen(port, () => {
   console.log(`Started up on port ${port}`);
 });
